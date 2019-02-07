@@ -3,5 +3,31 @@
 - Datasets used in the analysis can be found in the links below
 
 https://www.kaggle.com/lava18/google-play-store-apps/home
-
 https://www.kaggle.com/ramamet4/app-store-apple-data-set-10k-apps/home
+
+# Open Apple and Google store data sets
+apple_file = open('AppleStore.csv')
+google_file = open('googleplaystore.csv')
+
+from csv import reader
+read_apple_file = read(apple_file)
+read_google_file = read(google_file)
+
+apple_data = list(apple_data)
+google_data = list(google_data)
+
+# Defined function explore_data function
+
+#def explore_data(dataset, start, end, rows_and_columns=False):
+#    dataset_slice = dataset[start:end]    
+#    for row in dataset_slice:
+#        print(row)
+#        print('\n') # adds a new (empty) line after each row
+#
+#    if rows_and_columns:
+#        print('Number of rows:', len(dataset))
+#        print('Number of columns:', len(dataset[0]))
+
+# Exploring data
+explore_data(apple_data, 0, 5, True)
+explore_data(google_data, 0, 5, True)
