@@ -27,3 +27,11 @@ def explore_data(dataset, start, end, rows_and_columns=False):
 # Exploring data
 explore_data(apple_data, 0, 5, True)
 explore_data(google_data, 0, 5, True)
+
+# Deleting unncessary data
+total = 0
+for line in google_data:
+    if  'NaN' in line:
+        total += 1
+
+print(total)
