@@ -35,3 +35,6 @@ for line in google_data:
         total += 1
 
 print(total)
+
+def cleaning_data_set(dataset):
+    non_na
