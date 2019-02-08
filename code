@@ -9,11 +9,17 @@ https://www.kaggle.com/ramamet4/app-store-apple-data-set-10k-apps/home
 apple_file = open('AppleStore.csv')
 google_file = open('googleplaystore.csv')
 
-apple_data = list(apple_file)
-google_data = list(google_file)
+from csv import reader
+read_a_file = reader(apple_file)
+read_g_file = reader(google_file)
+
+apple_data = list(read_a_file)
+google_data = list(read_g_file)
+
+
+opened_file = open('AppleStore.csv')
 
 # Defined function explore_data function
-
 def explore_data(dataset, start, end, rows_and_columns=False):
     dataset_slice = dataset[start:end]    
     for row in dataset_slice:
@@ -23,7 +29,7 @@ def explore_data(dataset, start, end, rows_and_columns=False):
     if rows_and_columns:
         print('Number of rows:', len(dataset))
         print('Number of columns:', len(dataset[0]))
-
+        
 # Exploring data
 explore_data(apple_data, 0, 5, True)
 explore_data(google_data, 0, 5, True)
@@ -38,3 +44,13 @@ def cleaning_data_set(dataset):
 
 cleaned_google_data = cleaning_data_set(google_data)
 cleaned_apple_data = cleaning_data_set(apple_data)
+
+# Explore cleaned data sets 
+explore_data(cleaned_apple_data, 0, 5, True)
+explore_data(cleaned_google_data, 0, 5, True)
+
+# Checking for duplicate rows
+for App in cleaned_google_data:
+    name = App[0]
+    if name == 'Instagram':
+        print(App)
