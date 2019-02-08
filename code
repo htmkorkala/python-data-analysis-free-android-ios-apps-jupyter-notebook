@@ -28,13 +28,13 @@ def explore_data(dataset, start, end, rows_and_columns=False):
 explore_data(apple_data, 0, 5, True)
 explore_data(google_data, 0, 5, True)
 
-# Deleting unncessary data
-total = 0
-for line in google_data:
-    if  'NaN' in line:
-        total += 1
-
-print(total)
-
+# Creating function to clean data set from NaN values
 def cleaning_data_set(dataset):
-    non_na
+    non_na = []
+    for line in dataset:
+        if not 'NaN' in line:
+            non_na.append(line)
+    return non_na
+
+cleaned_google_data = cleaning_data_set(google_data)
+cleaned_apple_data = cleaning_data_set(apple_data)
