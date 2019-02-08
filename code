@@ -16,9 +16,6 @@ read_g_file = reader(google_file)
 apple_data = list(read_a_file)
 google_data = list(read_g_file)
 
-
-opened_file = open('AppleStore.csv')
-
 # Defined function explore_data function
 def explore_data(dataset, start, end, rows_and_columns=False):
     dataset_slice = dataset[start:end]    
