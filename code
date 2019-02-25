@@ -51,3 +51,19 @@ for App in cleaned_google_data:
     name = App[0]
     if name == 'Instagram':
         print(App)
+ 
+# Checking for duplicate apps 
+duplicate_apps = []
+unique_apps = []
+
+for App in cleaned_google_data:
+    name = App[0]
+    if name in unique_apps:
+        duplicate_apps.append(name)
+    else:
+        unique_apps.append(name)
+    
+print('Number of duplicate apps:', len(duplicate_apps))
+print('\n')
+print('Examples of duplicate apps:', duplicate_apps[:15])
+
